@@ -48,7 +48,7 @@ if Meteor.isClient
             pub_key = Meteor.settings.public.stripe_live_publishable
         Template.instance().checkout = StripeCheckout.configure(
             key: pub_key
-            image: 'https://res.cloudinary.com/facet/image/upload/v1585357133/one_logo.png'
+            image: 'https://res.cloudinary.com/facet/image/upload/v1585357133/homestar_logo.png'
             locale: 'auto'
             zipCode: true
             token: (token) =>
