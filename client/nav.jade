@@ -1,24 +1,25 @@
 template(name='nav')
     // .ui.fluid.fixed.menu.topnav(style="background-color:#{currentUser.theme_color};")
-    .ui.fluid.borderless.attached.inverted.menu.topnav
+    .ui.fluid.borderless.attached.menu.topnav
         a.icon.item.toggle_sidebar
             i.large.bars.icon
         a.item(href="/" class="{{isActivePath '/'}}")
-            img.ui.avatar.compact.image(src="{{c.url 'homestar_logo' height=200 width=200 gravity='face' crop='fill'}}")
+            i.green.home.large.icon
+            // img.ui.avatar.image(src="{{c.url 'homestar_logo' height=200 width=200 gravity='face' crop='fill'}}")
             span.mobile.hidden Homestar Painting
         
         // a.icon.item.set_member.mobile.hidden(href="/m/member" class="{{isActivePath '/m/member'}}" title='users')
         //     i.large.users.icon
-        a.item.mobile.hidden(href="/" class="{{isActivePath '/'}}" title='dashboard')
-            i.large.dashboard.icon
-            | Dashboard
-        a.large.item(href="/user/#{currentUser.username}" class="{{isActiveRoute 'user_dashboard'}}")
+        // a.item.mobile.hidden(href="/" class="{{isActivePath '/'}}")
+        //     i.large.dashboard.icon
+        //     | Dashboard
+        a.large.item.mobile.hidden(href="/user/#{currentUser.username}" class="{{isActiveRoute 'user_dashboard'}}")
             i.large.user.icon
             | Profile
-        a.item.mobile.hidden(href="/finance" class="{{isActivePath '/finance'}}" title='finance')
+        a.item.mobile.hidden(href="/finance" class="{{isActivePath '/finance'}}")
             i.large.money.icon
             | Finance
-        a.item.mobile.hidden(href="/settings" class="{{isActivePath '/settings'}}" title='settings')
+        a.item.mobile.hidden(href="/settings" class="{{isActivePath '/settings'}}")
             i.large.cog.icon
             | Settings
         .right.menu
@@ -46,7 +47,10 @@ template(name='nav')
                         else
                             img.ui.avatar.compact.image(src="{{c.url currentUser.profile_image_id height=200 width=200 gravity='face' crop='fill'}}" class=currentUser.invert_class)
                     else 
-                        i.large.user.large.icon
+                        if is_admin
+                            i.large.shield.icon(title='admin mode on')
+                        else
+                            i.large.user.large.icon
                     strong.mobile.hidden #{currentUser.name}
                 // a.mobile.hidden.item(href="/user/#{currentUser.username}" class="{{isActiveRoute 'user_credits'}}")
                 //     |#{currentUser.points}p
@@ -138,44 +142,35 @@ template(name='right_sidebar')
 
 
 template(name='left_sidebar')
-    .ui.left.sidebar.vertical.large.borderless.menu
+    .ui.left.sidebar.vertical.borderless.menu
         // a.item.toggle_sidebar(href="/" class="{{isActiveRoute '/'}}")
         //     img.ui.avatar.compact.image(src="{{c.url 'homestar_logo' height=200 width=200 gravity='face' crop='fill'}}")
         //     |One
-        a.item.set_member.toggle_sidebar(href="/m/member" class="{{isActivePath 'm/member'}}" title='players')
-            i.large.users.icon
-            | directory
-        a.item.toggle_sidebar(href="/events" class="{{isActivePath '/events'}}")
-            i.large.calendar.icon
-            |events
-        a.item.toggle_sidebar(href="/m/request" class="{{isActivePath '/m/request'}}")
-            i.large.concierge.bell.icon
-            |requests
-        a.item.toggle_sidebar(href="/m/offer" class="{{isActivePath '/m/offer'}}")
-            i.large.hand.holding.heart.icon
-            |offers
-        a.item.toggle_sidebar.set_post(href="/m/post" class="{{isActivePath '/m/post'}}")
-            i.large.newspaper.icon
-            |news
-        // a.item.toggle_sidebar(href="/m/collective" class="{{isActivePath 'requests'}}")
-        //     i.users.icon
-        //     |collectives
-        a.item.toggle_sidebar.set_bug(href="/m/bug" class="{{isActivePath '/m/bug'}}")
-            i.large.bug.icon
-            |bugs
-        a.icon.item.toggle_sidebar.set_photo(href="/m/photo" class="{{isActivePath '/m/photo'}}" title='photos')
-            i.large.large.picture.icon
-            |photos  
-        a.icon.item.toggle_sidebar.set_expense(href="/m/expense" class="{{isActivePath '/m/expense'}}" title='expenses')
-            i.large.dollar.icon
-            |expenses            
-        // a.item.toggle_sidebar.set_rental(href="/m/rental" class="{{isActivePath regex='rentals'}}")
-        //     i.clock.icon
-        //     |rentals
-        // if has_badge 'facilitator'
-        // a.item.toggle_sidebar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
-        //     |chat
-        //     i.large.chat.icon
+        a.item.mobile.hidden.toggle_sidebar(href="/" class="{{isActivePath '/'}}")
+            i.large.dashboard.icon
+            | Dashboard
+        a.large.item.mobile.hidden.toggle_sidebar(href="/user/#{currentUser.username}" class="{{isActiveRoute 'user_dashboard'}}")
+            i.large.user.icon
+            | Profile
+        a.item.mobile.hidden.toggle_sidebar(href="/finance" class="{{isActivePath '/finance'}}")
+            i.large.money.icon
+            | Finance
+        a.item.mobile.hidden.toggle_sidebar(href="/settings" class="{{isActivePath '/settings'}}")
+            i.large.cog.icon
+            | Settings
+        .divider
+        a.disabled.item.mobile.hidden.toggle_sidebar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
+            |Chat
+            i.large.chat.icon
+        a.disabled.item.mobile.hidden.toggle_sidebar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
+            |Leads
+            i.large.telephone.icon
+        a.disabled.item.mobile.hidden.toggle_sidebar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
+            |Projects
+            i.large.tasks.icon
+        a.disabled.item.mobile.hidden.toggle_sidebar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
+            |Invoices
+            i.large.invoice.icon
         if is_eric
             a.icon.item.toggle_dev.toggle_sidebar
                 |toggle dev

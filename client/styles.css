@@ -20,7 +20,7 @@ body {
 }
 
 .form {
-  border-radius: 10px !important;
+  border-radius: 7px !important;
 }
 
 .user_online {
@@ -91,11 +91,11 @@ html.ios body {
 
 .segment:not(.pushable) {
   transition: height 1s linear;
-  border-radius: 10px !important;
+  border-radius: 7px !important;
 }
 
 .topnav.menu {
-    /*border-radius: 0 0 10px 10px !important; */
+    /*border-radius: 0 0 7px 7px !important; */
     transition: background-color 3s ease !important;
     /* background-color: rgba(250,250,250,.6) !important; */
     /*background-color: rgba(50,110,100,1) !important; */
@@ -111,7 +111,7 @@ html.ios body {
 
 .secnav{
     /* padding: 5px !important;
-    border-radius: 10px !important;
+    border-radius: 7px !important;
     border-width: 1px !important;
     border-color: grey !important;
     border-style: solid !important; */
@@ -124,11 +124,11 @@ html.ios body {
 
 .secnav::-webkit-scrollbar {
     height: 1px !important;
-   /*border-radius: 10px !important; */
+   /*border-radius: 7px !important; */
 }
 .topnav::-webkit-scrollbar {
     height: 1px !important;
-   /*border-radius: 10px !important; */
+   /*border-radius: 7px !important; */
 }
 
 
@@ -143,7 +143,7 @@ html.ios body {
 
 
 .header {
-    /* border-radius: 0 0 10px 10px !important; */
+    /* border-radius: 0 0 7px 7px !important; */
     transition: color 2s ease !important;
     /* background-color: rgba(250,250,250,.6) !important; */
     /* opacity: .7 !important; */
@@ -152,7 +152,7 @@ html.ios body {
     z-index: 2000 !important;
 } */
 .menu:not(.topnav) {
-     /*border-radius: 10px !important; */
+     /*border-radius: 7px !important; */
     transition: background-color 2s ease !important;
 }
 
@@ -226,9 +226,9 @@ html.ios body {
     font-size: 1.10rem !important;
     font-weight: 300 !important;
     /* color: grey !important; */
-    /* border-radius: 0 0 10px 10px !important; */
+    /* border-radius: 0 0 7px 7px !important; */
     transition: all .25s ease !important;
-    /* margin-bottom: 10px !important; */
+    /* margin-bottom: 7px !important; */
     /* background-color: rgba(250,250,250,.6) !important; */
     /* opacity: .7 !important; */
 }
@@ -238,7 +238,7 @@ html.ios body {
 }
 
 .rounded {
-     border-radius: 10px !important; 
+     border-radius: 7px !important; 
 }
 
 .sadness {
@@ -248,7 +248,7 @@ html.ios body {
 
 .card {
     /* background: black !important; */
-     border-radius: 10px !important; 
+     border-radius: 7px !important; 
 }
 
 a.goto_article {
@@ -256,11 +256,11 @@ a.goto_article {
 }
 
 .ui.button:not(.circular) { 
-    border-radius: 10px !important;
+    border-radius: 7px !important;
 }
 .ui.button {
     margin: 2px !important;
-    /*border-radius: 10px !important; */
+    /*border-radius: 7px !important; */
     transition: height .25s ease !important; 
     /* background-color: rgba(200, 200, 200, 0.2) !important; */
     /* padding: 12px !important; */
@@ -294,11 +294,11 @@ a.title, #title {
     color: black !important;
 }
 .ui.popup {
-    border-radius:10px !important;
+    border-radius:7px !important;
 }
 
 .ui.embed, .ui.text {
-    border-radius: 10px !important;
+    border-radius: 7px !important;
 }
 
 .invert{
@@ -310,7 +310,7 @@ a.title, #title {
 
 
 .embed{
-    border-radius: 10px !important;
+    border-radius: 7px !important;
     /* background: rgba(0,0,0,.85) !important; */
     /* filter: invert(1) !important; */
 }
@@ -318,7 +318,7 @@ a.title, #title {
 
 
 /* iframe {
-    border-radius: 10px !important;
+    border-radius: 7px !important;
     filter: invert(1) !important;
 } */
 
@@ -326,17 +326,17 @@ a.title, #title {
 .f20 {
   font-size: 200% !important;
   /* line-height: 200% !important; */
-  /* margin-bottom: 10px !important;  */
+  /* margin-bottom: 7px !important;  */
 }
 .f19 {
   font-size: 190% !important;
   /* line-height: 190% !important; */
-  /* margin-bottom: 10px !important;  */
+  /* margin-bottom: 7px !important;  */
 }
 .f18 {
   font-size: 180% !important;
   /* line-height: 180% !important; */
-  /* margin-bottom: 10px !important;  */
+  /* margin-bottom: 7px !important;  */
 }
 .f17 {
   font-size: 170% !important;
