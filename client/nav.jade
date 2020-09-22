@@ -9,18 +9,18 @@ template(name='nav')
         
         // a.icon.item.set_member.mobile.hidden(href="/m/member" class="{{isActivePath '/m/member'}}" title='users')
         //     i.large.users.icon
-        a.item.mobile.hidden(href="/dashboard" class="{{isActivePath '/dashboard'}}" title='dashboard')
+        a.item.mobile.hidden(href="/" class="{{isActivePath '/'}}" title='dashboard')
             i.large.dashboard.icon
-            | dashboard
-        a.item.mobile.hidden(href="/profile" class="{{isActivePath '/profile'}}" title='profile')
+            | Dashboard
+        a.large.item(href="/user/#{currentUser.username}" class="{{isActiveRoute 'user_dashboard'}}")
             i.large.user.icon
-            | profile
-        a.item.mobile.hidden(href="/finances" class="{{isActivePath '/finances'}}" title='finances')
+            | Profile
+        a.item.mobile.hidden(href="/finance" class="{{isActivePath '/finance'}}" title='finance')
             i.large.money.icon
-            | finances
+            | Finance
         a.item.mobile.hidden(href="/settings" class="{{isActivePath '/settings'}}" title='settings')
             i.large.cog.icon
-            | settings
+            | Settings
         .right.menu
             if unread_count
                 a.item.alerts.select_term(href="#" class=alert_toggle_class)
