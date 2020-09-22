@@ -79,13 +79,16 @@ template(name='profile_layout')
                         a.ui.basic.circular.button.select_term.profile_nav_item(href="/user/#{username}/requests" class="{{isActiveRoute 'user_requests'}}" title="#{user.username} requests")
                             i.large.concierge.bell.icon
                             span projects
-                        a.ui.basic.circular.button.select_term.profile_nav_item(href="/user/#{username}/offers" class="{{isActiveRoute 'user_offers'}}" title="#{user.username} offers")
+                        a.ui.basic.circular.button.select_term.profile_nav_item(href="/user/#{username}/leads" class="{{isActiveRoute 'user_leads'}}" title="#{user.username} offers")
                             i.large.hand.holding.heart.icon
                             span leads
                         a.ui.basic.circular.button.select_term.profile_nav_item(href="/user/#{username}/messages" class="{{isActiveRoute 'user_messages'}}" title="#{user.username} messages")
                             i.chat.large.icon
                             span chat
-                        a.ui.compact.basic.button(href="/user/#{username}/badges" class="{{isActiveRoute 'user_badges'}}" title="#{user.username} badges")
+                        a.ui.basic.circular.button.select_term.profile_nav_item(href="/user/#{username}/services" class="{{isActiveRoute 'user_services'}}" title="#{user.username} services")
+                            i.wrench.large.icon
+                            span services
+                        a.ui.circular.basic.button.select_term.profile_nav_item(href="/user/#{username}/badges" class="{{isActiveRoute 'user_badges'}}" title="#{user.username} badges")
                             i.certificate.large.icon
                             span.mobile.hidden badges
                         // .spacer

@@ -1,13 +1,15 @@
 template(name='home')
-    // .ui.center.aligned.basic.segment
-    //     .ui.basic.big.compact.circular.button.debit
-    //         i.gift.red.icon
-    //         |send points
     .ui.stackable.padded.grid
         .centered.row 
-            .four.wide.column
+            .five.wide.column
                 .ui.segment 
-                    .ui.header company
+                    .ui.header 
+                        img.ui.avatar.compact.image(src="{{c.url currentUser.company_image_id height=200 width=200 gravity='face' crop='fill'}}" class=currentUser.invert_class)
+                        |#{currentUser.company_title}
+                    .ui.large.list
+                        .item #{currentUser.company_title}
+                        .item #{currentUser.company_phone}
+                        .item #{currentUser.company_city}
             .four.wide.column
                 .ui.segment 
                     .ui.header finance
@@ -23,9 +25,13 @@ template(name='home')
             .eight.wide.column
                 .ui.segment
                     .ui.header leads     
+                    .ui.stackable.menu
+                        a.item new
+                        a.item in progress
+                        a.item all
+                        a.item credit requests
             .four.wide.column
                 .ui.segment
-                    .ui.header budget
                     .ui.link.selection.list
                         .item.header HELPFUL LINKS
                         a.item Vetted Network FAQ
@@ -34,11 +40,10 @@ template(name='home')
                         a.item Add money to balance
             .four.wide.column
                 .ui.segment
-                    .ui.header budget
-                    .ui.list
+                    .ui.large.list
                         .item Questions? Give us a call at:
                         .item 206-960-4337
                         .item 6AM - 5PM PST Monday - Friday
-                        .item Or contact our support staff
-                        .item Pro Resources
-                        .item Lead Credits Policy
+                        a.item Or contact our support staff
+                        a.item Pro Resources
+                        a.item Lead Credits Policy

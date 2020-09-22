@@ -1,12 +1,16 @@
 template(name='nav')
     // .ui.fluid.fixed.menu.topnav(style="background-color:#{currentUser.theme_color};")
     .ui.fluid.borderless.attached.menu.topnav
-        a.icon.item.toggle_sidebar
+        a.icon.item.toggle_leftbar
             i.large.bars.icon
-        a.item(href="/" class="{{isActivePath '/'}}")
+        a.icon.header.item.mobile.only(href="/" class="{{isActivePath '/'}}")
             i.green.home.large.icon
             // img.ui.avatar.image(src="{{c.url 'homestar_logo' height=200 width=200 gravity='face' crop='fill'}}")
             span.mobile.hidden Homestar Painting
+        a.header.item.mobile.hidden(href="/" class="{{isActivePath '/'}}")
+            i.green.home.large.icon
+            // img.ui.avatar.image(src="{{c.url 'homestar_logo' height=200 width=200 gravity='face' crop='fill'}}")
+            | Homestar Painting
         
         // a.icon.item.set_member.mobile.hidden(href="/m/member" class="{{isActivePath '/m/member'}}" title='users')
         //     i.large.users.icon
@@ -58,12 +62,12 @@ template(name='nav')
                     i.ellipsis.vertical.large.icon
             else
                 a.item(href="/register" title='register')
+                    |Register
                     i.large.plus.icon
-                    |register
                     // +icon name='plus'
                 a.item(href="/login" title='login')
+                    |Login
                     i.large.chevron.right.icon
-                    |login
                     // +icon name='login-rounded-right'
     if session_is 'viewing_alerts'
         +topbar
@@ -143,43 +147,43 @@ template(name='right_sidebar')
 
 template(name='left_sidebar')
     .ui.left.sidebar.vertical.borderless.menu
-        // a.item.toggle_sidebar(href="/" class="{{isActiveRoute '/'}}")
+        // a.item.toggle_leftbar(href="/" class="{{isActiveRoute '/'}}")
         //     img.ui.avatar.compact.image(src="{{c.url 'homestar_logo' height=200 width=200 gravity='face' crop='fill'}}")
         //     |One
-        a.item.mobile.hidden.toggle_sidebar(href="/" class="{{isActivePath '/'}}")
+        a.item.toggle_leftbar(href="/" class="{{isActivePath '/'}}")
             i.large.dashboard.icon
             | Dashboard
-        a.large.item.mobile.hidden.toggle_sidebar(href="/user/#{currentUser.username}" class="{{isActiveRoute 'user_dashboard'}}")
+        a.large.item.toggle_leftbar(href="/user/#{currentUser.username}" class="{{isActiveRoute 'user_dashboard'}}")
             i.large.user.icon
             | Profile
-        a.item.mobile.hidden.toggle_sidebar(href="/finance" class="{{isActivePath '/finance'}}")
+        a.item.toggle_leftbar(href="/finance" class="{{isActivePath '/finance'}}")
             i.large.money.icon
             | Finance
-        a.item.mobile.hidden.toggle_sidebar(href="/settings" class="{{isActivePath '/settings'}}")
+        a.item.toggle_leftbar(href="/settings" class="{{isActivePath '/settings'}}")
             i.large.cog.icon
             | Settings
         .divider
-        a.disabled.item.mobile.hidden.toggle_sidebar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
+        a.disabled.item.toggle_leftbar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
             |Chat
             i.large.chat.icon
-        a.disabled.item.mobile.hidden.toggle_sidebar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
+        a.disabled.item.toggle_leftbar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
             |Leads
             i.large.telephone.icon
-        a.disabled.item.mobile.hidden.toggle_sidebar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
+        a.disabled.item.toggle_leftbar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
             |Projects
             i.large.tasks.icon
-        a.disabled.item.mobile.hidden.toggle_sidebar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
+        a.disabled.item.toggle_leftbar(href="/chat" class="{{isActivePath '/chat'}}" title='chat') 
             |Invoices
             i.large.invoice.icon
         if is_eric
-            a.icon.item.toggle_dev.toggle_sidebar
+            a.icon.item.toggle_dev.toggle_leftbar
                 |toggle dev
                 if is_dev
                     i.code.blue.large.icon
                 else
                     i.code.large.icon
         if is_in_admin
-            a.icon.item.toggle_admin.toggle_sidebar
+            a.icon.item.toggle_admin.toggle_leftbar
                 |toggle admin
                 if is_admin
                     i.shield.blue.large.icon
@@ -187,23 +191,23 @@ template(name='left_sidebar')
                     i.shield.large.icon
             
         if is_admin
-            // a.item.toggle_sidebar.set_badge(href="/m/badge" class="{{isActivePath 'badges'}}")
+            // a.item.toggle_leftbar.set_badge(href="/m/badge" class="{{isActivePath 'badges'}}")
             //     i.certificate.blue.icon
             //     | badges
-            // a.item.toggle_sidebar.set_debit(href="/m/debit" class="{{isActivePath regex='rentals'}}")
+            // a.item.toggle_leftbar.set_debit(href="/m/debit" class="{{isActivePath regex='rentals'}}")
             //     i.gift.blue.icon
             //     |gifts
             .divider
-            // a.item.toggle_sidebar.set_project(href="/m/project" class="{{isActivePath regex='projects'}}")
+            // a.item.toggle_leftbar.set_project(href="/m/project" class="{{isActivePath regex='projects'}}")
             //     i.tasks.blue.icon
             //     | projects
-            // a.item.toggle_sidebar(href="/m/room" class="{{isActiveRoute 'requests'}}")
+            // a.item.toggle_leftbar(href="/m/room" class="{{isActiveRoute 'requests'}}")
             //     i.building.blue.icon
             //     |rooms
-            a.blue.item.set_model.toggle_sidebar(href="/m/model" class="{{isActivePath '/m/model'}}")
+            a.blue.item.set_model.toggle_leftbar(href="/m/model" class="{{isActivePath '/m/model'}}")
                 |admin
                 i.database.blue.icon
-            a.item.set_user.toggle_sidebar(href="/m/user" class="{{isActiveRoute '/m/user'}}")
+            a.item.set_user.toggle_leftbar(href="/m/user" class="{{isActiveRoute '/m/user'}}")
                 i.blue.users.icon
                 | all users
 
