@@ -24,6 +24,8 @@ force_loggedin =  ()->
 Router.onBeforeAction(force_loggedin, {
     # only: ['admin']
     except: [
+        'home'
+        'delta'
         'register'
         'login'
         'verify-email'
