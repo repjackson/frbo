@@ -36,8 +36,8 @@ Meteor.users.allow
         #     true
     update: (user_id, doc, fields, modifier) ->
         user = Meteor.users.findOne user_id
-        console.log user_id
-        console.log doc
+        # console.log user_id
+        # console.log doc
         if user_id
             if doc._id is user_id
                 true
