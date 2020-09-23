@@ -11,6 +11,20 @@ template(name='project_card')
             |!{description}
         
 
+template(name='projects')
+    .ui.header projects
+    a.card(href="/project/#{_id}/view")
+        .image
+            if icon 
+                +icolorlg name=icon
+            else
+                img.ui.raw.image(src="{{c.url image_id width=400 height=300 crop='fill'}}")    
+        .content
+            a.ui.header(href="/project/#{_id}/view")
+                |#{location}: #{title}
+            |!{description}
+        
+
 
 template(name='project_view')
     with current_doc

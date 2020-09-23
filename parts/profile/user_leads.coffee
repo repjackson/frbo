@@ -40,10 +40,6 @@ if Meteor.isClient
                 model:'lead'
                 # target_user_id: target_user._id
 
-        slots: ->
-            Docs.find
-                model:'slot'
-                _author_id: Router.current().params.user_id
 
 
 if Meteor.isServer

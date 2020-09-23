@@ -5,6 +5,10 @@ if Meteor.isClient
         @layout 'layout'
         @render 'project_view'
         ), name:'project_view'
+    Router.route '/projects/', (->
+        @layout 'layout'
+        @render 'projects'
+        ), name:'projects'
 
     Template.project_view.onCreated ->
         @autorun => Meteor.subscribe 'doc', Router.current().params.doc_id
