@@ -7,25 +7,27 @@ template(name='nav')
             i.green.home.large.icon
             // img.ui.avatar.image(src="{{c.url 'homestar_logo' height=200 width=200 gravity='face' crop='fill'}}")
         a.header.item.mobile.hidden(href="/" class="{{isActivePath '/'}}")
-            i.green.home.large.icon
+            i.home.large.icon
             // img.ui.mini.compact.inline.image(src="{{c.url 'homestar_logo' height=400 width=400 gravity='face' crop='fill'}}")
-            | Homestar Painting
+            | frbo
         
         // a.icon.item.set_member.mobile.hidden(href="/m/member" class="{{isActivePath '/m/member'}}" title='users')
         //     i.large.users.icon
         // a.item.mobile.hidden(href="/" class="{{isActivePath '/'}}")
         //     i.large.dashboard.icon
         //     | Dashboard
-        a.header.item.mobile.hidden(href="/user/#{currentUser.username}" class="{{isActiveRoute 'user_dashboard'}}")
-            // i.large.user.icon
-            | Profile
-        a.header.item.mobile.hidden(href="/finance" class="{{isActivePath '/finance'}}")
-            // i.large.money.icon
-            | Finance
-        a.header.item.mobile.hidden(href="/settings" class="{{isActivePath '/settings'}}")
-            // i.large.cog.icon
-            | Settings
+        // a.header.item.mobile.hidden(href="/user/#{currentUser.username}" class="{{isActiveRoute 'user_dashboard'}}")
+        //     // i.large.user.icon
+        //     | profile
+        // a.header.item.mobile.hidden(href="/finance" class="{{isActivePath '/finance'}}")
+        //     // i.large.money.icon
+        //     | Finance
+        // a.header.item.mobile.hidden(href="/settings" class="{{isActivePath '/settings'}}")
+        //     // i.large.cog.icon
+        //     | Settings
         .right.menu
+            a.icon.item(href="/chat" title='chat') 
+                i.plus.large.icon
             if unread_count
                 a.item.alerts.select_term(href="#" class=alert_toggle_class)
                     i.large.bell.icon

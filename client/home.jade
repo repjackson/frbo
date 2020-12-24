@@ -1,5 +1,15 @@
 template(name='home')
-    .ui.stackable.padded.grid
+    .ui.stackable.padded.grid(style="background: url('https://www.forrentbyowner.com/img/apartment-rental-by-owner.webp') no-repeat fixed center; height:300px;")
+        .centered.row(style="height:500px")
+            .ten.wide.column
+                .ui.header find your next home fast
+                .ui.large.fluid.input
+                    input(type='text' placeholder='Enter a city and state...')
+        .centered.row 
+            .sixteen.wide.column
+                .ui.center.aligned.dividing.header Recent Listings
+                each recent_listings
+                    +listing_small
         .centered.row 
             .five.wide.column
                 .ui.segment 
