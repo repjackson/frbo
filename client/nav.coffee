@@ -54,6 +54,11 @@ Template.nav.helpers
                 _id:Meteor.user().current_tribe_id
         
 Template.nav.events
+    'click .add': ->
+        new_id = Docs.insert 
+            model:'listing'
+        Router.go "/listing/#{new_id}/edit"
+
     'click .alerts': ->
         Session.set('viewing_alerts', !Session.get('viewing_alerts'))
         
@@ -79,42 +84,42 @@ Template.nav.events
         Session.set 'loading', true
         Meteor.call 'set_facets', 'shift', ->
             Session.set 'loading', false
-    'click .set_request': ->
-        Session.set 'loading', true
-        Meteor.call 'set_facets', 'request', ->
-            Session.set 'loading', false
-    'click .set_offer': ->
-        Session.set 'loading', true
-        Meteor.call 'set_facets', 'offer', ->
-            Session.set 'loading', false
-    'click .set_model': ->
-        Session.set 'loading', true
-        Meteor.call 'set_facets', 'model', ->
-            Session.set 'loading', false
-    'click .set_event': ->
-        Session.set 'loading', true
-        Meteor.call 'set_facets', 'event', ->
-            Session.set 'loading', false
-    'click .set_location': ->
-        Session.set 'loading', true
-        Meteor.call 'set_facets', 'location', ->
-            Session.set 'loading', false
-    'click .set_photo': ->
-        Session.set 'loading', true
-        Meteor.call 'set_facets', 'photo', ->
-            Session.set 'loading', false
-    'click .set_project': ->
-        Session.set 'loading', true
-        Meteor.call 'set_facets', 'project', ->
-            Session.set 'loading', false
-    'click .set_expense': ->
-        Session.set 'loading', true
-        Meteor.call 'set_facets', 'expense', ->
-            Session.set 'loading', false
-    'click .set_post': ->
-        Session.set 'loading', true
-        Meteor.call 'set_facets', 'post', ->
-            Session.set 'loading', false
+    # 'click .set_request': ->
+    #     Session.set 'loading', true
+    #     Meteor.call 'set_facets', 'request', ->
+    #         Session.set 'loading', false
+    # 'click .set_offer': ->
+    #     Session.set 'loading', true
+    #     Meteor.call 'set_facets', 'offer', ->
+    #         Session.set 'loading', false
+    # 'click .set_model': ->
+    #     Session.set 'loading', true
+    #     Meteor.call 'set_facets', 'model', ->
+    #         Session.set 'loading', false
+    # 'click .set_event': ->
+    #     Session.set 'loading', true
+    #     Meteor.call 'set_facets', 'event', ->
+    #         Session.set 'loading', false
+    # 'click .set_location': ->
+    #     Session.set 'loading', true
+    #     Meteor.call 'set_facets', 'location', ->
+    #         Session.set 'loading', false
+    # 'click .set_photo': ->
+    #     Session.set 'loading', true
+    #     Meteor.call 'set_facets', 'photo', ->
+    #         Session.set 'loading', false
+    # 'click .set_project': ->
+    #     Session.set 'loading', true
+    #     Meteor.call 'set_facets', 'project', ->
+    #         Session.set 'loading', false
+    # 'click .set_expense': ->
+    #     Session.set 'loading', true
+    #     Meteor.call 'set_facets', 'expense', ->
+    #         Session.set 'loading', false
+    # 'click .set_post': ->
+    #     Session.set 'loading', true
+    #     Meteor.call 'set_facets', 'post', ->
+    #         Session.set 'loading', false
     'click .add_gift': ->
         # user = Meteor.users.findOne(username:@username)
         new_gift_id =

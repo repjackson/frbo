@@ -10,8 +10,8 @@ Template.body.events
     'click a:not(.select_term)': ->
         unless Meteor.user().invert_class is 'invert'
             $('.global_container')
-            .transition('fade out', 200)
-            .transition('fade in', 200)
+            .transition('fade out', 100)
+            .transition('fade in', 100)
 
 
 Template.home.events

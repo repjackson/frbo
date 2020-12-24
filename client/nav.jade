@@ -1,6 +1,7 @@
 template(name='nav')
     // .ui.fluid.fixed.menu.topnav(style="background-color:#{currentUser.theme_color};")
     .ui.fluid.borderless.attached.large.menu.topnav
+        +status
         a.icon.item.toggle_leftbar
             i.large.bars.icon
         a.icon.header.item.mobile.only(href="/" class="{{isActivePath '/'}}")
@@ -26,7 +27,7 @@ template(name='nav')
         //     // i.large.cog.icon
         //     | Settings
         .right.menu
-            a.icon.item(href="/chat" title='chat') 
+            a.icon.item.add(title='add listing') 
                 i.plus.large.icon
             if unread_count
                 a.item.alerts.select_term(href="#" class=alert_toggle_class)
@@ -63,12 +64,12 @@ template(name='nav')
                     i.ellipsis.vertical.large.icon
             else
                 a.item(href="/register" title='register')
-                    |Register
-                    i.large.plus.icon
+                    |register
+                    // i.large.plus.icon
                     // +icon name='plus'
                 a.item(href="/login" title='login')
-                    |Login
-                    i.large.chevron.right.icon
+                    // i.large.chevron.right.icon
+                    |login
                     // +icon name='login-rounded-right'
     if session_is 'viewing_alerts'
         +topbar

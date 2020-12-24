@@ -91,7 +91,7 @@ html.ios body {
 
 .segment:not(.pushable) {
   transition: height 1s linear;
-  /*border-radius: 7px !important;*/
+  border-radius: 7px !important;
 }
 
 .topnav.menu {
@@ -260,7 +260,7 @@ a.goto_article {
 }
 .ui.button {
     margin: 2px !important;
-    /*border-radius: 7px !important; */
+    border-radius: 7px !important; 
     transition: height .25s ease !important; 
     /* background-color: rgba(200, 200, 200, 0.2) !important; */
     /* padding: 12px !important; */
